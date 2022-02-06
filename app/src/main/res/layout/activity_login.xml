@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.yuuuzzzin.offoff_android.viewmodel.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="60dp"
+        android:paddingRight="60dp"
+        tools:context=".views.ui.member.LoginActivity">
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="112dp"
+            android:contentDescription="@string/app_icon"
+            android:src="@drawable/ic_offoff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_id"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="34dp"
+            android:background="@drawable/layout_edit_text"
+            android:hint="@string/id"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:paddingHorizontal="23dp"
+            android:text="@={viewModel.id}"
+            android:textColorHint="@color/white4"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_logo" />
+
+        <EditText
+            android:id="@+id/et_pw"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="34dp"
+            android:background="@drawable/layout_edit_text"
+            android:hint="@string/pw"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:paddingHorizontal="23dp"
+            android:text="@={viewModel.pw}"
+            android:textColorHint="@color/white4"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_id" />
+
+        <Button
+            android:id="@+id/bt_login"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="38dp"
+            android:background="@drawable/layout_button_round_enabled"
+            android:enabled="@{etId.text.length() > 0 &amp;&amp; etPw.text.length() > 0}"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:onClick="@{()-> viewModel.login()}"
+            android:padding="0dp"
+            android:stateListAnimator="@null"
+            android:text="@string/login"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:cornerRadius="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_pw" />
+
+        <TextView
+            android:id="@+id/bt_findIdPw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/find_id_pw"
+            android:textColor="@color/white5"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bt_login" />
+
+        <TextView
+            android:id="@+id/bt_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/signup"
+            android:textColor="@color/white5"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bt_login" />
+
+        <include
+            android:id="@+id/layout_progress"
+            layout="@layout/layout_progress_loading_opaque"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="-60dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

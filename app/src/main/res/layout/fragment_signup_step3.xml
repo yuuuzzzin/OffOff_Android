@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".views.ui.member.SignupStep3Fragment">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.yuuuzzzin.offoff_android.viewmodel.SignupViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/bt_back"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="56dp"
+            android:backgroundTint="@android:color/transparent"
+            android:contentDescription="@string/button_back"
+            android:padding="0dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_photo"
+            android:layout_width="102dp"
+            android:src="@drawable/ic_avatar_big"
+            android:layout_height="102dp"
+            android:layout_marginHorizontal="144dp"
+            android:layout_marginTop="136dp"
+            android:background="@drawable/layout_photo"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/bt_camera"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="-10dp"
+            android:layout_marginBottom="-10dp"
+            android:background="@drawable/layout_white3_r10"
+            android:contentDescription="@string/button_camera"
+            android:padding="9dp"
+            android:src="@drawable/ic_camera"
+            app:layout_constraintBottom_toBottomOf="@id/iv_photo"
+            app:layout_constraintEnd_toEndOf="@id/iv_photo" />
+
+        <EditText
+            android:id="@+id/et_nickname"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="54dp"
+            android:background="@drawable/layout_edit_text"
+            android:hint="@string/nickname_pattern"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:paddingHorizontal="23dp"
+            android:text="@={viewModel.nickname}"
+            android:textColorHint="@color/white4"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_photo" />
+
+        <TextView
+            android:id="@+id/tv_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/white5"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_nickname" />
+
+        <Button
+            android:id="@+id/bt_signup"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/layout_button_round_enabled"
+            android:enabled="@{viewModel.isNicknameVerified != null ? true : false }"
+            android:includeFontPadding="false"
+            android:padding="0dp"
+            android:stateListAnimator="@null"
+            android:text="@string/done"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_nickname" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
