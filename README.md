@@ -8,9 +8,14 @@
 | :------------: | :------------: | :------------: |
 |![-스플래시및로그인](https://user-images.githubusercontent.com/57751515/145573892-727d1e85-a2dc-492e-8f8d-ced78ce7dc29.gif)|![자동로그인](https://user-images.githubusercontent.com/57751515/145573911-d1e29bbe-2641-4d0c-ab80-ddc4b07e821e.gif)|![회원가입](https://user-images.githubusercontent.com/57751515/145573973-fa44ce98-55b7-4be3-9340-d9c56ec42997.gif)|
 
+- [Retorofit2](https://square.github.io/retrofit/)를 이용한 서버 통신으로 회원가입, 로그인 구현
+- LiveData와 Flow를 통해 
+- [Shared Preferences](https://developer.android.com/training/data-storage/shared-preferences)로 키-값 형태로 Bearer token을 저장해 자동 로그인 구현
+
 ## 4개의 네비게이션 탭
 <img src="https://user-images.githubusercontent.com/57751515/145574417-211e9d17-91e9-4ee9-b8db-73571c685e09.gif"  width="40%">
 
+- [Navigation](https://developer.android.com/guide/navigation)을 통해 바텀 네비게이션 뷰를 이용한 프래그먼트 전환 가능
 - 메인 화면과 캘린더 화면은 기능과 디자인을 보완해 추후 업데이트 예정
 - 환경설정 탭도 로그아웃 외의 여러 기능을 추가해 업데이트 예정
 
