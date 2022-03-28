@@ -126,7 +126,7 @@ targetSdkVersion 30 / minSdkVersion 21
   - [Lifecycle](https://developer.android.com/jetpack/androidx/releases/lifecycle)
   - [DataBinding](https://developer.android.com/topic/libraries/data-binding)
   - [ViewPager2](https://developer.android.com/jetpack/androidx/releases/viewpager2)
-  - [Hilt](https://developer.android.com/training/dependency-injection/hilt-jetpack)
 - [Retrofit2](https://square.github.io/retrofit/) : 네트워킹
 - [Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) : 비동기 처리
+- [Hilt](https://developer.android.com/training/dependency-injection/hilt-jetpack) : 의존성 주입
 - [Realm](https://github.com/realm) : 데이터베이스
