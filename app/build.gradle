@@ -106,40 +106,14 @@ dependencies {
     // FontAwesome
     implementation 'info.androidhive:fontawesome:0.0.5'
 
-    // CircleImageView
-    implementation 'de.hdodenhof:circleimageview:3.1.0'
-
-    // Amplify
-    def amplify_version = "1.24.0"
-    implementation "com.amplifyframework:aws-analytics-pinpoint:$amplify_version"
-    implementation "com.amplifyframework:aws-api:$amplify_version"
-    implementation "com.amplifyframework:aws-auth-cognito:$amplify_version"
-    implementation "com.amplifyframework:aws-datastore:$amplify_version"
-    implementation "com.amplifyframework:aws-predictions:$amplify_version"
-    implementation "com.amplifyframework:aws-storage-s3:$amplify_version"
-    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.0.10'
-    implementation 'com.amplifyframework:core-kotlin:0.2.0'
-
     // SwipeRefreshLayout
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
-
-    // Paging 3
-    def paging_version = "3.0.1"
-    implementation "androidx.paging:paging-runtime-ktx:$paging_version"
 
     implementation "androidx.preference:preference-ktx:1.1.1"
 
     // CalendarView
     implementation "jp.kuluna:calendarviewpager:2.1.2"
     implementation "com.github.applikeysolutions:cosmocalendar:1.0.4"
-
-    // DataStore
-    implementation  "androidx.datastore:datastore-core:1.0.0-alpha04"
-    implementation  "com.google.protobuf:protobuf-javalite:3.10.0"
-
-    // CoroutineWorker
-    def work_version = "2.5.0"
-    implementation "androidx.work:work-runtime-ktx:$work_version"
 
     // Image-Crop
     implementation "com.theartofdev.edmodo:android-image-cropper:2.8.+"
