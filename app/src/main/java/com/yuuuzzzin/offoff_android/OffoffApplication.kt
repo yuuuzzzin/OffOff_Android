@@ -39,7 +39,6 @@ class OffoffApplication : MultiDexApplication() {
         private lateinit var instance: OffoffApplication
         lateinit var pref: SharedPreferenceController
         lateinit var user: User
-        //lateinit var imageList: List<Image>
 
         fun appCtx(): Context {
             return instance.applicationContext

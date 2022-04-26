@@ -35,8 +35,6 @@ class BoardActivity : BaseBaseActivity<ActivityBoardBinding>(R.layout.activity_b
     private lateinit var lastPostId: String
     private var clickedPosition: Int? = 0
     private var isFirst: Boolean = TRUE
-    //private var totalScrolled: Int = 0
-    //private val density = resources.displayMetrics.density
 
     // 게시물 액티비티 요청 및 결과 처리
     private val requestPost = registerForActivityResult(
@@ -64,31 +62,12 @@ class BoardActivity : BaseBaseActivity<ActivityBoardBinding>(R.layout.activity_b
         initRV()
     }
 
-    override fun init() {
-        Log.d("tag_init", "이닛")
-//        val networkManager: NetworkManager? = this?.let { NetworkManager(it) }
-//        if (!networkManager?.checkNetworkState()!!) {
-//            this.toast(Constants.NETWORK_DISCONNECT)
-//            finish()
-//        }
-    }
-
-
     private fun processIntent() {
         boardName = intent.getStringExtra("boardName").toString()
         boardType = intent.getStringExtra("boardType").toString()
     }
 
     private fun initView() {
-
-//        binding.btClose.setOnClickListener {
-//            binding.layoutSearch.visibility = View.GONE
-//            binding.etSearch.text = null
-//            binding.layoutCollapsing.minimumHeight = convertDPtoPX(this, 152)
-//            isFirst = TRUE
-//            isSearching = FALSE
-//            viewModel.getPosts(boardType)
-//        }
 
         binding.btWritePost.setOnClickListener {
             val intent = Intent(applicationContext, PostWriteActivity::class.java)
@@ -136,21 +115,6 @@ class BoardActivity : BaseBaseActivity<ActivityBoardBinding>(R.layout.activity_b
             currentPostList = it.toTypedArray()
         })
 
-//        binding.etSearch.setOnEditorActionListener { v, actionId, event ->
-//            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-//                isFirst = TRUE
-//                isSearching = TRUE
-//
-//                // 검색 첫 페이지이면
-//                if (isFirst) {
-//                    viewModel.searchPost(boardType, binding.etSearch.text.toString(), null)
-//                } else { // 다음 페이지이면
-//                    viewModel.searchPost(boardType, binding.etSearch.text.toString(), lastPostId)
-//                }
-//                return@setOnEditorActionListener true
-//            }
-//            return@setOnEditorActionListener false
-//        }
     }
 
     private fun initToolbar() {
@@ -224,8 +188,6 @@ class BoardActivity : BaseBaseActivity<ActivityBoardBinding>(R.layout.activity_b
         return when (item.itemId) {
             R.id.action_search -> {
                 // 검색 버튼 누를 시
-                //binding.layoutSearch.visibility = View.VISIBLE // 가시화
-                //binding.layoutCollapsing.minimumHeight = convertDPtoPX(this, 230) // 최소 높이 조정
                 val intent = Intent(this, SearchPostActivity::class.java)
                 intent.putExtra("boardType", boardType)
                 intent.putExtra("boardName", boardName)
