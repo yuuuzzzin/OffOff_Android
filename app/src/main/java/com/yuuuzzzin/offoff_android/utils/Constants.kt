@@ -26,15 +26,6 @@ object Constants {
         return this.value ?: ""
     }
 
-    fun <T> LiveData<T>.observeOnce(lifecycleOwner: LifecycleOwner, observer: Observer<T>) {
-        observe(lifecycleOwner, object : Observer<T> {
-            override fun onChanged(t: T?) {
-                observer.onChanged(t)
-                removeObserver(this)
-            }
-        })
-    }
-
     fun Context.toast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
