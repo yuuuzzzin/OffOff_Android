@@ -18,27 +18,18 @@ import io.realm.Realm
 object RepositoryModule {
 
     @Provides
-    @ViewModelScoped
     fun provideBoardRepository(boardService: BoardService): BoardRepository {
         return BoardRepository(boardService)
     }
 
     @Provides
-    @ViewModelScoped
     fun provideMemberRepository(memberService: MemberService): MemberRepository {
         return MemberRepository(memberService)
     }
 
     @Provides
-    @ViewModelScoped
     fun provideScheduleDataBaseRepository(shiftDao: ShiftDao, realm: Realm): ScheduleDataBaseRepository {
         return ScheduleDataBaseRepository(shiftDao, realm)
     }
-
-//    @Provides
-//    @ViewModelScoped
-//    fun provideScheduleServiceRepository(shiftDao: ShiftDao): ScheduleServiceRepository {
-//        return ScheduleServiceRepository(shiftDao)
-//    }
 
 }
